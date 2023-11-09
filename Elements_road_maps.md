@@ -3,7 +3,7 @@
 3. URL extractor 
 4. Text processing - remove common words, lowercase, length chooser and best64 type mutating.
 5. Wordlist output
-6. 
+
 
 
 v1
@@ -16,4 +16,6 @@ compare the captured words to a word list of common words and remove the words a
 v3 
 next add the word length options, remove duplicate words and create a list of urls 
 
+v4 
 
+add a mutation feature base on the best64 from hashcat
