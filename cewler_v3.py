@@ -47,14 +47,14 @@ def get_all_words_from_url(url, length):
             gotten_text.append(word)
     return gotten_text
 
- #removes common words
+ #removes common words and write to wordlist
 def Compare_Words_common(gotten_text, common_words):
     with open(common_words, 'r') as common_words_file:
         content1 = common_words_file.read()
     compared_words_file = [word for word in gotten_text if word not in content1]
-    f = open("word_list.txt", "w") 
-    f.write(f'{compared_words_file}')
-    f.close()
+    with open("word_list.txt", 'w') as WL:
+        for word in compared_words_file:
+            WL.write(str(word) + '\n')
 
 
 
