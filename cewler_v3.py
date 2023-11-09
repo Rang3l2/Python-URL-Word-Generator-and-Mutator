@@ -2,6 +2,8 @@ import click
 import requests
 import re
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
 
 #This confirms the website is up
 def get_html_of(url):
@@ -13,21 +15,32 @@ def get_html_of(url):
     return resp.content.decode()
 
 
-#grabs urls
+#Grabs urls
 def get_links(url):
     html = get_html_of(url)
     soup = BeautifulSoup(html, 'html.parser')
-    for link in soup.find_all('a'):
-        print(link.get('href'))
+    links = soup.find_all('a')
+    link_list = [link.get('href') for link in links]
+    full_links = [urljoin(url, link) for link in link_list]
+    #print ("hello")
+    print (full_links)
 
-#captures words
+
+#captures words, lowered, unquied and set length
 def get_all_words_from_url(url, length):
     html = get_html_of(url)
     soup = BeautifulSoup(html, 'html.parser')
     raw_text = soup.get_text()
     grepped = re.findall(r'\w+', raw_text)
+    lowered = [GW.lower() for GW in grepped ]
+    unquied = []
+    for words in lowered:
+        if words not in unquied:
+            unquied.append(words)
+        else:
+            continue
     gotten_text = []
-    for word in grepped:
+    for word in unquied:
         if len(word) <= length:
             continue
         else:
