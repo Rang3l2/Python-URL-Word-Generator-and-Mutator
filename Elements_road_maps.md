@@ -14,4 +14,6 @@ v2
 compare the captured words to a word list of common words and remove the words and writes the remaining words.
 
 v3 
-next add the word length options and create a list of urls 
+next add the word length options, remove duplicate words and create a list of urls 
+
+
