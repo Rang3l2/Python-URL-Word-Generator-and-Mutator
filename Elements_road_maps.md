@@ -1,8 +1,9 @@
 1. Html downloader
 2. Text extractor
 3. URL extractor 
-4. Text processing
+4. Text processing - remove common words, lowercase, length chooser and best64 type mutating.
 5. Wordlist output
+6. 
 
 
 v1
