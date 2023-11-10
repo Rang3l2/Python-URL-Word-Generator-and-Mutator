@@ -16,6 +16,4 @@ compare the captured words to a word list of common words and remove the words a
 v3 
 next add the word length options, remove duplicate words and create a list of urls 
 
-v4 
-
-add a mutation feature base on the best64 from hashcat
+v4 add a mutation feature based on the best64 from hashcat
