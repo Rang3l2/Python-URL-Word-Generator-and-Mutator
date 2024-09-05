@@ -3,6 +3,7 @@
 3. URL extractor 
 4. Text processing - remove common words, lowercase, length chooser and best64 type mutating.
 5. Wordlist output
+6. Come up with a decent name
 
 
 
